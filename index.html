@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+   <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
@@ -23,7 +23,7 @@
 
         /* تنسيق العنوان الرئيسي والحاوية الخاصة به (تأثير Parallax) */
         .header-section {
-            /* استخدم صورة خلفية داكنة (يجب أن توفرها باسم header-bg.jpg) */
+            /* يجب وضع صورة خلفية باسم header-bg.jpg لتفعيل التأثير */
             background-image: url('header-bg.jpg'); 
             background-color: #3f51b5; 
             
@@ -35,6 +35,167 @@
             
             color: white;
             padding: 80px 0 30px; 
+            margin-bottom: 30px;
+            
+            /* إضافة طبقة شفافة داكنة لتمييز النص الأبيض */
+            box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.4); 
+            
+            /* الحركة عند الدخول */
+            animation: fadeIn 2s ease-out; 
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 3.5em; 
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+        }
+
+        /* تنسيق عبارة "للتعارف الجاد" */
+        .header-section h3 {
+            margin: 10px 0 0;
+            font-size: 1.5em; 
+            color: #ffeb3b; 
+            font-weight: bold; 
+            animation: pulse 1.5s infinite; 
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        /* تنسيق حاوية البطاقات */
+        .cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 1400px; 
+            margin: 0 auto; 
+            gap: 30px; 
+            padding: 20px;
+        }
+
+        /* تنسيق كل بطاقة شخص */
+        .card {
+            background-color: #ecf0f1; 
+            color: #333; 
+            border: none;
+            border-radius: 12px; 
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); 
+            width: 320px; 
+            padding: 25px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px); 
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.7); 
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            max-height: 280px; 
+            border-radius: 8px;
+            margin-bottom: 20px;
+            object-fit: cover;
+        }
+
+        .card h2 { color: #34495e; margin-top: 0; font-size: 1.8em; }
+        .contact-options { display: flex; justify-content: space-around; margin-top: 20px; }
+        .contact-btn { padding: 10px 15px; border-radius: 5px; color: white; text-decoration: none; font-weight: bold; font-size: 1.1em; transition: background-color 0.3s; flex-grow: 1; margin: 0 5px; }
+        
+        /* تنسيق زر الاتصال */
+        .call-btn {
+            background-color: #27ae60; 
+        }
+        .call-btn:hover {
+            background-color: #2ecc71;
+        }
+
+        /* تنسيق زر واتساب */
+        .whatsapp-btn {
+            background-color: #3498db; 
+        }
+        .whatsapp-btn:hover {
+            background-color: #2980b9;
+        }
+        
+        .card p { display: none; }
+        @media (max-width: 600px) { .card { width: 90%; } h1 { font-size: 2.5em; } .header-section { padding: 50px 0 20px; } }
+    </style>
+</head>
+<body>
+
+    <div class="header-section">
+        <h1>عوطلية حسن باشا</h1>
+        <h3>للتعارف الجاد</h3>
+    </div>
+
+    <div class="cards-container">
+
+        <div class="card animate__animated animate__fadeInUp animate__delay-05s"> 
+            <img src="mohamed.jpg.jpeg" alt="صورة محمد ممدوح">
+            <h2>محمد ممدوح</h2>
+            <p>01147811894</p>
+            <div class="contact-options">
+                <a href="tel:+201147811894" class="contact-btn call-btn">مكالمة هاتف</a>
+                <a href="https://wa.me/201147811894" class="contact-btn whatsapp-btn">واتساب</a>
+            </div>
+        </div>
+
+        <div class="card animate__animated animate__fadeInUp animate__delay-1s"> 
+            <img src="moslem.jpg.jpeg" alt="صورة مسلم نادى">
+            <h2>مسلم نادى</h2>
+            <p>01145771549</p>
+            <div class="contact-options">
+                <a href="tel:+201145771549" class="contact-btn call-btn">مكالمة هاتف</a>
+                <a href="https://wa.me/201145771549" class="contact-btn whatsapp-btn">واتساب</a>
+            </div>
+        </div>
+        
+        <div class="card animate__animated animate__fadeInUp animate__delay-1-5s">
+            <img src="youssef.jpg.jpeg" alt="صورة يوسف مجدى">
+            <h2>يوسف مجدى</h2>
+            <p>01147200589</p>
+            <div class="contact-options">
+                <a href="tel:+201147200589" class="contact-btn call-btn">مكالمة هاتف</a>
+                <a href="https://wa.me/201147200589" class="contact-btn whatsapp-btn">واتساب</a>
+            </div>
+        </div>
+
+        <div class="card animate__animated animate__fadeInUp animate__delay-2s">
+            <img src="mohamed salah.jpg.jpeg" alt="صورة محمد صالح">
+            <h2>محمد صالح</h2>
+            <p>01116394057</p>
+            <div class="contact-options">
+                <a href="tel:+201116394057" class="contact-btn call-btn">مكالمة هاتف</a>
+                <a href="https://wa.me/201116394057" class="contact-btn whatsapp-btn">واتساب</a>
+            </div>
+        </div>
+
+        <div class="card animate__animated animate__fadeInUp animate__delay-2-5s">
+            <img src="youssef hagag.jpg.jpeg" alt="صورة يوسف حجاج">
+            <h2>يوسف حجاج</h2>
+            <p>01101946485</p>
+            <div class="contact-options">
+                <a href="tel:+201101946485" class="contact-btn call-btn">مكالمة هاتف</a>
+                <a href="https://wa.me/201101946485" class="contact-btn whatsapp-btn">واتساب</a>
+            </div>
+        </div>
+        
+        </div>
+
+</body>
+</html>
+         padding: 80px 0 30px; 
             margin-bottom: 30px;
             
             /* إضافة طبقة شفافة داكنة لتمييز النص الأبيض */
@@ -196,3 +357,4 @@
 
 </body>
 </html>
+
